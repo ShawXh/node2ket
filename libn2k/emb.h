@@ -270,7 +270,4 @@ public:
     Trainer(bool reg_nce = true, float regw = 0.01, int sphere_norm = 3) {};
 };
 
-// projUNN-T by Yiyang Ling
-// void ProjUNN(float *u, float *grad_u, const int d);
-
 #endif
