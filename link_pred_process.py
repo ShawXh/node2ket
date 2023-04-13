@@ -6,7 +6,7 @@ import time
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--net', type=str, default="/data/xionghao/data/link_pred_data/dblp-net.txt-masked")
+    parser.add_argument('--net', type=str)
     parser.add_argument('--ratio', type = float, default=0.01)
     return parser.parse_args()
 
