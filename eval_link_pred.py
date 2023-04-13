@@ -3,9 +3,9 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--net', type=str, default="/data/xionghao/data/link_pred_data/dblp-net.txt-masked")
-    parser.add_argument('--conv-emb', type=str, default="./baselines/line-1st-emb-norm.txt", help="conventional embedding path")
-    parser.add_argument('--tu-emb', type=str, default="./tmpfile/TU_embedding.txt", help="tu embedding path")
+    parser.add_argument('--net', type=str)
+    parser.add_argument('--conv-emb', type=str)
+    parser.add_argument('--tu-emb', type=str)
     parser.add_argument('--tu-config', type=str, default=None, help="tu config path")
     parser.add_argument('-c', '--eval-conv-emb', default=False, action="store_true", help="evaluate conventional embedding")
     parser.add_argument('-t', '--eval-tu-emb', default=False, action="store_true", help="evaluate tu embedding")
