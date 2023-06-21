@@ -1,3 +1,3 @@
 # node2ket
 
-For ease of checking reproducibility, the core code is placed in this anonymous repository.
+This repo contain the code and data for the submission of node2ket to VLDB2024.
