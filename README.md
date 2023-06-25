@@ -12,6 +12,10 @@ sh compile.sh
 # How to Run node2ket
 
 **Step 1.** Prepare the data, i.e. the network file, which are in the form of weigted edgelist:
+```
+node_id node_id weight
+...
+```
 
 **Step 2 (optional for node2ket+).** Build index table for sub-embeddings. An example:
 ```
@@ -19,6 +23,7 @@ python ../InitTUConfigLouvain.py --net ./data/ca-GrQc-net.txt -L 1 -C 8 --res  1
 ```
 
 **Step 3.** Run the program. Examples:
+
 node2ket:
 ```
 ./node2ket -net ./data/ca-GrQc-net.txt -dim 16 -C 8 -rw 1 -window-size 1 -obj mt -samples 100 -print 0 -eval-nr 1 -rho 0.1
