@@ -31,7 +31,7 @@ python network_reconstruction.py --emb1 emb.txt --emb2 emb.txt --net /data/ca-Gr
 
 **Link Prediction:**
 ```
-python eval_link_pred.py --net /data/ca-GrQc-net.txt -c --conv-emb emb.txt
+python eval_link_pred.py --net /data/ca-GrQc-net.txt-masked -c --conv-emb emb.txt
 ```
 
 **Node Classification:**
