@@ -28,7 +28,7 @@ extern std::uniform_real_distribution<double> randf;
 char network_file[MAX_STRING] = "None"; 
 char sequence_file[MAX_STRING] = "None"; 
 char TU_config_file[MAX_STRING] = "None"; 
-char TU_embedding_file_src[MAX_STRING] = "TU_embedding.txt";
+char TU_embedding_file_src[MAX_STRING] = "sub_embedding.txt";
 char node_embedding_file[MAX_STRING] = "node_embedding.txt";
 char layer_weight_file[MAX_STRING] = "layer_weight.txt";
 char log_file[MAX_STRING] = "tmpfile/log.txt";
