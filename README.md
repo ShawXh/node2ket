@@ -9,11 +9,20 @@ This repo contain the code and data for the submission of node2ket to VLDB2024. 
 sh compile.sh
 ```
 
+# How to Run node2ket
+
+**Step 1.** Prepare the data.
+
+**Step 2 (optional).** 
+
+
 # Experiments
 
-All the scripts of experiments are shown as run_*.sh files.
+## node2ket
 
-# Evaluation for Baselines
+All the scripts of experiments in the paper are given as run_*.sh files.
+
+## Baselines
 
 Supposing we have an embedding file named as emb.txt, whose format is as follows:
 ```
