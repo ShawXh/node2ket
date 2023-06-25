@@ -14,16 +14,16 @@ This repo contain the code and data for the submission of node2ket to VLDB2024. 
 ├── data_preprocess
 │   ├── generate_random_walks.py (for node2ket with sequences as the input)
 │   └── link_pred_process.py (preprocess data for link prediction)
-├── evaluation
+├── evaluation (code for evaluation over node2ket and any other baselines)
 │   ├── EmbLoader.py
 │   ├── eval_link_pred.py
 │   ├── eval_network_reconstruction
 │   │   ├── network_reconstruction.py
 │   │   ├── run-nr.sh
 │   │   └── utils.py
-│   └── EvalNR (after compilation)
+│   └── EvalNR (excutable file after compilation)
 ├── InitTUConfigLouvain.py (generate sub-embedding indices for node2ket+ by Louvain partition)
-├── node2ket (after compilation)
+├── node2ket (excutable file after compilation)
 ├── node_embedding.txt (node embeddings by node2ket)
 ├── sub_embedding.txt (sub embeddings by node2ket)
 ├── src (cpp source code)
