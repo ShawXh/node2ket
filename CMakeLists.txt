@@ -11,7 +11,7 @@ find_package(Threads)
 file(GLOB SRC_LIST src/libn2k/*.cpp)
 add_library(libn2k STATIC ${SRC_LIST})
 
-include_directories(libn2k)
+include_directories(src/libn2k)
 
 add_executable(node2ket src/node2ket.cpp)
 add_executable(EvalNR src/EvalNR.cpp)
