@@ -41,7 +41,7 @@ This repo contains the code and data for the submission of node2ket to VLDB2024.
 └── run-parallel.sh
 ```
 
-The python scripts have been tested successfully on python 3.8.13 with networkx==2.8.4 and numpy==1.22.4.
+The python scripts work on python 3.8.13 with networkx==2.8.4 and numpy==1.22.4.
 
 
 # How to Compile
