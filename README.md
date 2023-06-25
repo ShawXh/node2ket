@@ -41,6 +41,9 @@ This repo contains the code and data for the submission of node2ket to VLDB2024.
 └── run-parallel.sh
 ```
 
+The python scripts have been tested successfully on python 3.8.13 with networkx==2.8.4 and numpy==1.22.4.
+
+
 # How to Compile
 
 ```
@@ -57,7 +60,7 @@ node_id node_id weight
 
 **Step 2 (necessary for node2ket+).** Build index table for sub-embeddings. An example:
 ```
-python ../InitTUConfigLouvain.py --net ./data/ca-GrQc-net.txt -L 1 -C 8 --res  100 500 1000 1500
+python InitTUConfigLouvain.py --net ./data/ca-GrQc-net.txt -L 1 -C 8 --res  100 500 1000 1500
 ```
 
 **Step 3.** Run the program. Examples:
