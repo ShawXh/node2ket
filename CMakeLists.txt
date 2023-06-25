@@ -9,7 +9,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 find_package(Threads)
 
 file(GLOB SRC_LIST src/libn2k/*.cpp)
-add_library(tnelib STATIC ${SRC_LIST})
+add_library(libn2k STATIC ${SRC_LIST})
 
 include_directories(libn2k)
 
