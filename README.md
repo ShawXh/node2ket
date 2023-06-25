@@ -1,6 +1,6 @@
 # node2ket
 
-This repo contain the code and data for the submission of node2ket to VLDB2024. The files include:
+This repo contains the code and data for the submission of node2ket to VLDB2024. The files include:
 
 ```
 ./
@@ -55,7 +55,7 @@ node_id node_id weight
 ...
 ```
 
-**Step 2 (optional for node2ket+).** Build index table for sub-embeddings. An example:
+**Step 2 (necessary for node2ket+).** Build index table for sub-embeddings. An example:
 ```
 python ../InitTUConfigLouvain.py --net ./data/ca-GrQc-net.txt -L 1 -C 8 --res  100 500 1000 1500
 ```
