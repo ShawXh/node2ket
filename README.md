@@ -108,7 +108,3 @@ python eval_link_pred.py --net /data/ca-GrQc-net.txt-masked -c --conv-emb emb.tx
 **Node Classification:**
 
 See this [repo](https://github.com/ShawXh/Evaluate-Embedding).
-
-# Other Data
-
-In this [link](https://pan.baidu.com/s/1XWKg6eW3qD_eGOgcqmt7rA) with password 4667.
