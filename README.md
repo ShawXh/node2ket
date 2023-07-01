@@ -10,17 +10,17 @@ This repo contains the code and data for the submission of node2ket to VLDB2024.
 │   ├── ca-GrQc-net.txt (for network reconstruction and node classification)
 │   ├── ca-GrQc-net.txt-masked (for link prediction)
 │   ├── ca-GrQc-net.txt-masked-edges (for link prediction)
-│   └── ca-GrQc-net.txt-noise-edges (for link prediction)
+│   ├── ca-GrQc-net.txt-noise-edges (for link prediction)
+│   └── data_node2ket.zip (other datasets)
 ├── data_preprocess
 │   ├── generate_random_walks.py (for node2ket with sequences as the input)
 │   └── link_pred_process.py (preprocess data for link prediction)
 ├── evaluation (code for evaluation over node2ket and any other baselines)
 │   ├── EmbLoader.py
 │   ├── eval_link_pred.py
-│   ├── eval_network_reconstruction
-│   │   ├── network_reconstruction.py
-│   │   ├── run-nr.sh
-│   │   └── utils.py
+│   ├── eval_network_reconstruction.py
+│   ├── run-nr.sh
+│   ├── utils.py
 │   └── EvalNR (excutable file after compilation)
 ├── InitTUConfigLouvain.py (generate sub-embedding indices for node2ket+ by Louvain partition)
 ├── node2ket (excutable file after compilation)
