@@ -131,13 +131,37 @@ Others:
 
 # Experiments
 
-## node2ket
+All the scripts to reproduce experiments of node2ket and node2ket+ in the paper are given as run_*.sh files (maybe annotated).
 
-All the scripts of experiments in the paper are given as run_*.sh files.
+## Evaluating node2ket
 
-## Baselines
+**Network Reconstruction:**
 
-Supposing we have an embedding file named as emb.txt, whose format is as follows:
+For middle-scale networks, run node2ket with the option "-eval-nr 1".
+
+For large-scale networks /data/youtube-idxnorm-net.txt:
+
+```
+cd evaluation
+node2ket: ./EvalNR -emb ./sub_embedding.txt -tensorized 1 -net /data/youtube-idxnorm-net.txt
+node2ket+: ./EvalNR -emb ./TU_embedding.txt -tensorized 1 -net /data/youtube-idxnorm-net.txt -config youtube-idxnorm-net.txt.louvain_config
+```
+
+**Link Prediction:**
+
+```
+cd evaluation
+python eval_link_pred.py --net /data/ca-GrQc-net.txt-masked -t --tu-emb ./sub_embedding.txt
+```
+
+
+**Node Classification:**
+
+Following instructions in this [repo](https://github.com/ShawXh/Evaluate-Embedding) with the full-dimensional node embedding file as input.
+
+## Evaluating Arbitrary Baselines
+
+Supposing we have a full-dimensional embedding file named as emb.txt, whose format is as follows:
 ```
 num_nodes emb_dim
 node_id -0.007614 0.142711 0.229157 -0.013976 0.196722 -0.156228 -0.915828 6.143982 .. (embedding vectors)
@@ -147,15 +171,26 @@ Then the node embeddings are evaluated by following scripts:
 
 **Network Reconstruction:**
 
+On middle-scale networks:
+
 ```
-python network_reconstruction.py --emb1 emb.txt --emb2 emb.txt --net /data/ca-GrQc-net.txt --func euc
+cd evaluation
+python eval_network_reconstruction.py --emb1 emb.txt --emb2 emb.txt --net /data/ca-GrQc-net.txt --func euc
+```
+
+On large-scale networks where the computing full adjacency matrix is impractical:
+
+```
+cd evaluation
+./EvalNR -emb emb.txt -net /data/youtube/youtube-idxnorm-net.txt -tensorized 0
 ```
 
 **Link Prediction:**
 ```
+cd evaluation
 python eval_link_pred.py --net /data/ca-GrQc-net.txt-masked -c --conv-emb emb.txt
 ```
 
 **Node Classification:**
 
-See this [repo](https://github.com/ShawXh/Evaluate-Embedding).
+Following this [repo](https://github.com/ShawXh/Evaluate-Embedding).
