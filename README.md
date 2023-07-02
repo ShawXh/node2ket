@@ -120,8 +120,8 @@ Evaluation:
 
 Output:
 - -outputemb (0 or 1) Set to 1 to output embeddings.
-- -node-emb (str) Path of output full-dimensional node embeddings.
-- -sub-emb (str) Path of output sub-embeddings, from which the full-dimensional embeddings can be recovered.
+- -node-emb (str) Path of output full-dimensional node embeddings. Default is ./node_embedding.txt.
+- -sub-emb (str) Path of output sub-embeddings, from which the full-dimensional embeddings can be recovered. Default is ./sub_embedding.txt.
 
 Others:
 - -seed (int) The random seed.
