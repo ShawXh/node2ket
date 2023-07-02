@@ -14,7 +14,8 @@ This repo contains the code and data for the submission of node2ket to VLDB2024.
 │   └── data_node2ket.zip (other datasets)
 ├── data_preprocess
 │   ├── generate_random_walks.py (for node2ket with sequences as the input)
-│   └── link_pred_process.py (preprocess data for link prediction)
+│   ├── link_pred_process.py (preprocess data for link prediction)
+│   └── README.md
 ├── evaluation (code for evaluation over node2ket and any other baselines)
 │   ├── EmbLoader.py
 │   ├── eval_link_pred.py
@@ -69,13 +70,17 @@ python InitTUConfigLouvain.py --net ./data/ca-GrQc-net.txt -L 1 -C 8 --res  100 
 
 node2ket:
 ```
-./node2ket -net ./data/ca-GrQc-net.txt -dim 16 -C 8 -rw 1 -window-size 1 -obj mt -samples 100 -print 0 -eval-nr 1 -rho 0.1
+./node2ket -net ./data/ca-GrQc-net.txt -dim 16 -C 8 -rw 1 -window-size 2 -obj mt -samples 100 -print 1 -eval-nr 1 -rho 0.1
 ```
 
 node2ket+:
 ```
-./node2ket -net ./data/ca-GrQc-net.txt -dim 16 -C 8 -rw 1 -window-size 1 -obj mt -samples 100 -riemann 0 -print 1 -eval-nr 1 -rho 0.1 -config ca-GrQc-net.txt.louvain_config -thread 8
+./node2ket -net ./data/ca-GrQc-net.txt -dim 16 -C 8 -rw 1 -window-size 2 -obj mt -samples 100 -riemann 0 -print 1 -eval-nr 1 -rho 0.1 -config ca-GrQc-net.txt.louvain_config -thread 8
 ```
+
+## Usage of node2ket program
+
+
 
 
 # Experiments

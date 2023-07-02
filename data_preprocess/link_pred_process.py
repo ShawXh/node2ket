@@ -7,7 +7,7 @@ import time
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--net', type=str)
-    parser.add_argument('--ratio', type = float, default=0.01)
+    parser.add_argument('--ratio', type = float, default=0.01, help="the ratio of masked edges")
     return parser.parse_args()
 
 args = parse_args()

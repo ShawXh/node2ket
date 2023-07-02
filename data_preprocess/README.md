@@ -21,7 +21,7 @@ python link_pred_process.py --net /data/ca-GrQc-net.txt --ratio 0.01
 
 Three files will be generated:
 
-A file that contains the edges after removing a part of edges.
+A file that contains the edges after removing a part of edges:
 - /data/ca-GrQc-net.txt-masked
 
 A file that contains the removed edges:
