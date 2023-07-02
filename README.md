@@ -93,7 +93,7 @@ Embedding dimension:
 
 Objetive:
 - -obj (str) The objective. Can be set as either mt or sgns.
-- -mt-mar (float) The margin of the loss marginal triplet
+- -mt-mar (float) The margin (gamma in the paper) of the loss marginal triplet.
 - -num-neg (int) The number of negative samples for the loss skip-gram by negative sampling.
 
 Sampling strategy:
