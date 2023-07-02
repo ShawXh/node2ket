@@ -55,6 +55,8 @@ sh compile.sh
 
 # How to Run node2ket
 
+## Running Example
+
 **Step 1.** Prepare the data, i.e. the network file, which are in the form of weigted edgelist:
 ```
 node_id node_id weight
@@ -78,10 +80,44 @@ node2ket+:
 ./node2ket -net ./data/ca-GrQc-net.txt -dim 16 -C 8 -rw 1 -window-size 2 -obj mt -samples 100 -riemann 0 -print 1 -eval-nr 1 -rho 0.1 -config ca-GrQc-net.txt.louvain_config -thread 8
 ```
 
-## Usage of node2ket program
+## Arguments of Node2ket
 
+Input data:
+- -net (str) Path of the input network file.
+- -seq (str) Path of the input node sequence file. 
+- -config (str, for node2ket+) Path of the index table of sub-embeddings.
 
+Embedding dimensions:
+- -C (int) The number of sub-embedding for each node.
+- -dim (int) The dimension of sub-embeddings.
 
+Objetives:
+- -obj (str) The objective. Can be set as either mt or sgns.
+- -mt-mar (float) The margin of the loss marginal triplet
+- -num-neg (int) The number of negative samples for the loss skip-gram by negative sampling.
+
+Sampling strategies:
+- -rw (int) If set as 1, then use random walk as the sampling strategy.
+- -window-size (int) The window size of random walk.
+- -rwr (int) If set as 1, then use random walk with restart as the sampling strategy.
+- -ppralpha (float) The probability of restarting in random walk with restart.
+
+Optimizer:
+- -opt (str) The optimizer. Can be set as sgd, bsgd, rmsprop, or adagrad. Default is adagrad.
+- -batch-size (int) The batch size.
+- -riemann (int) The order in Riemannian optimization.
+- -rho (float) Learning rate.
+
+Verbose print:
+- -print (int) Set to 1 to print training details.
+
+Evaluation:
+- -eval-nr (int) Set to 1 to evaluate the network reconstruction precision after embedding learning.
+
+Output:
+- -outputemb (int) Set to 1 to output embeddings.
+- -node-emb (str) Path of output full-dimensional node embeddings.
+- -sub-emb (str) Path of output sub-embeddings, from which the full-dimensional embeddings can be recovered.
 
 # Experiments
 

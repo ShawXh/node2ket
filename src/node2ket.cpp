@@ -27,8 +27,8 @@ extern std::uniform_real_distribution<double> randf;
 
 char network_file[MAX_STRING] = "None"; 
 char sequence_file[MAX_STRING] = "None"; 
-char TU_config_file[MAX_STRING] = "None"; 
-char TU_embedding_file_src[MAX_STRING] = "sub_embedding.txt";
+char sub_emb_config_file[MAX_STRING] = "None"; 
+char sub_embedding_file_src[MAX_STRING] = "sub_embedding.txt";
 char node_embedding_file[MAX_STRING] = "node_embedding.txt";
 char layer_weight_file[MAX_STRING] = "layer_weight.txt";
 char log_file[MAX_STRING] = "tmpfile/log.txt";
@@ -794,9 +794,9 @@ void PrintParameters()
     printf("-----File Settings---------------------------------------\n");
     if (net_flag = strcmp(network_file, "None")) printf("Network file: %s \n", network_file);
     if (seq_flag = strcmp(sequence_file, "None")) printf("Sequence file: %s \n", sequence_file);
-    if (strcmp(TU_config_file, "None")) {printf("TU config file: %s \n", TU_config_file); readtu_flag=true;}
+    if (strcmp(sub_emb_config_file, "None")) {printf("sub_emb config file: %s \n", sub_emb_config_file); readtu_flag=true;}
     printf("Node embedding: %s \n", node_embedding_file);
-    printf("TU embedding src: %s \n", TU_embedding_file_src);
+    printf("TU embedding src: %s \n", sub_embedding_file_src);
     //if (arch == 1) printf("Emb-v:\t%s \n", v_embedding_file);
     printf("-----Training Settings-----------------------------------\n");
     printf("Samples: %lldM\n", total_samples / 1000000);
@@ -805,11 +805,11 @@ void PrintParameters()
 
     printf("Objective: %s\t", obj_str);
     if (!strcmp(obj_str, "mt")) obj = 1;
-    else if (!strcmp(obj_str, "logistic")) obj = 0;
+    else if (!strcmp(obj_str, "sgns")) obj = 0;
     else if (!strcmp(obj_str, "mix")) obj = 2;
     else {printf("ERROR: obj is invalid.\n"); exit(1);}
 
-    if (obj == 2) printf("%.2f logistic + %.2f mt\n", obj_mix_thresh, 1 - obj_mix_thresh);
+    if (obj == 2) printf("%.2f sgns + %.2f mt\n", obj_mix_thresh, 1 - obj_mix_thresh);
     if (obj == 0 || obj == 2) printf("Num negative: %d\n", num_neg);
     if (obj == 1 || obj == 2) printf("Margin: %.3f\n", margin);
 
@@ -851,7 +851,7 @@ void Train()
     if (net_flag) net.InitNetwork(network_file);
     else if (seq_flag) seq.InitFile(sequence_file, window_size, 0, 1);
     else {printf("ERROR: network_file or sequence_file should be initialized\n"); exit(1);}
-    if (readtu_flag) tutab.ReadTUConfig(TU_config_file, net_flag ? (int)net.num_memblock : (int)seq.num_memblock);
+    if (readtu_flag) tutab.ReadTUConfig(sub_emb_config_file, net_flag ? (int)net.num_memblock : (int)seq.num_memblock);
     if (readtu_flag) embedding.InitTensorizedEmbedding(L, C, tutab.R, dim, 0., arch, opt_str);
     else embedding.InitTensorizedEmbedding(L, C, (net_flag ? net.num_memblock : seq.num_memblock), dim, 0., arch, opt_str);
     if (obj == 0 || obj == 2) InitSigmoidTable();
@@ -877,7 +877,7 @@ void Train()
     // }
 
     if (use_lw) layer_weight.OutputWeight(layer_weight_file);
-    embedding.OutputTensorEmbedding(TU_embedding_file_src, 0., tutab);
+    embedding.OutputTensorEmbedding(sub_embedding_file_src, 0., tutab);
     OutputEmbedding(node_embedding_file);
 }
 
@@ -932,7 +932,7 @@ int main(int argc, char **argv)
 
     if ((i = ArgPos((char *)"-outputemb", argc, argv)) > 0) outputemb = atoi(argv[i + 1]);
     if ((i = ArgPos((char *)"-node-emb", argc, argv)) > 0) strcpy(node_embedding_file, argv[i + 1]);
-    if ((i = ArgPos((char *)"-TU-emb-src", argc, argv)) > 0) strcpy(TU_embedding_file_src, argv[i + 1]);
+    if ((i = ArgPos((char *)"-TU-emb-src", argc, argv)) > 0) strcpy(sub_embedding_file_src, argv[i + 1]);
 
     if ((i = ArgPos((char *)"-opt", argc, argv)) > 0) strcpy(opt_str, argv[i + 1]);
     if ((i = ArgPos((char *)"-obj", argc, argv)) > 0) strcpy(obj_str, argv[i + 1]);
