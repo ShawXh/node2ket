@@ -113,7 +113,7 @@ Constraints:
 - -norm (int) Set to 1 to normalize the sub embeddings on the unit hyper sphere. Default is 1.
 
 Verbose print:
-- -print (int) Set to 1 to print training details.
+- -print (int) Set to 1 to print training progress.
 
 Evaluation:
 - -eval-nr (int) Set to 1 to evaluate the network reconstruction precision after embedding learning.
