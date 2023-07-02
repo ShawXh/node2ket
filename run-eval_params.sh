@@ -1,6 +1,6 @@
 function LPn2k() {
     cd ..
-    python eval_link_pred.py --net ${data} --tu-emb ./build/TU_embedding.txt -t
+    python eval_link_pred.py --net ${data} --tu-emb ./build/sub_embedding.txt -t
     cd build
 }
 

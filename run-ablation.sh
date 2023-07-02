@@ -1,6 +1,6 @@
 function LPn2k() {
     cd ..
-    python eval_link_pred.py --net ${data} --tu-emb ./build/TU_embedding.txt -t
+    python eval_link_pred.py --net ${data} --tu-emb ./build/sub_embedding.txt -t
     cd build
 }
 
@@ -14,12 +14,12 @@ function NCn2k() {
 # link pred
 # ./node2ket -net /data/xionghao/data/link_pred_data/ca-GrQc-net.txt-masked -dim 16 -C 8 -rw 1 -obj logistic -num-neg 5 -samples 50 -print 1
 # cd ..
-# python eval_link_pred.py --net /data/xionghao/data/link_pred_data/ca-GrQc-net.txt-masked --tu-emb ./build/TU_embedding.txt -t
+# python eval_link_pred.py --net /data/xionghao/data/link_pred_data/ca-GrQc-net.txt-masked --tu-emb ./build/sub_embedding.txt -t
 # cd build
 
 # ./node2ket -net /data/xionghao/data/link_pred_data/blog-net.txt-masked -dim 16 -C 8 -rw 1 -obj mt -samples 100 -print 1
 # cd ..
-# python eval_link_pred.py --net /data/xionghao/data/link_pred_data/blog-net.txt-masked --tu-emb ./build/TU_embedding.txt -t
+# python eval_link_pred.py --net /data/xionghao/data/link_pred_data/blog-net.txt-masked --tu-emb ./build/sub_embedding.txt -t
 # cd build
 
 # ablation 1
@@ -342,9 +342,9 @@ data=/data/xionghao/data/youtube/youtube-sparse-net.txt
 
 # data=/data/xionghao/data/link_pred_data/youtube-sparse-net.txt-masked
 # ./node2ket -net $data -dim 16 -C 8 -rw 1 -window-size 1 -obj mt -samples 100 -rho 0.02 -opt sgd -window-size 2
-# python ../eval_link_pred.py --net $data -t --tu-emb ./TU_embedding.txt
+# python ../eval_link_pred.py --net $data -t --tu-emb ./sub_embedding.txt
 # ./node2ket -net $data -dim 16 -C 8 -rw 1 -window-size 1 -obj mt -samples 100 -rho 0.2 -opt rmsprop -window-size 2
-# python ../eval_link_pred.py --net $data -t --tu-emb ./TU_embedding.txt
+# python ../eval_link_pred.py --net $data -t --tu-emb ./sub_embedding.txt
 
 data=/data/xionghao/data/youtube/youtube-sparse-net.txt
 vocab=/data/xionghao/data/youtube/youtube-sparse-vocab.txt
@@ -367,7 +367,7 @@ label=/data/xionghao/data/youtube/youtube-sparse-label.txt
 # LP
 # data=/data/xionghao/data/link_pred_data/youtube-sparse-net.txt-masked
 # ./node2ket -net $data -dim 16 -C 8 -rw 1 -window-size 2 -obj logistic -samples 100 -num-neg 5 -rho 0.2
-# python ../eval_link_pred.py --net $data -t --tu-emb ./TU_embedding.txt
+# python ../eval_link_pred.py --net $data -t --tu-emb ./sub_embedding.txt
 
 # NC
 # ./node2ket -net $data -dim 8 -C 4 -rw 1 -window-size 1 -obj mt -samples 100 -print 1 -eval-nr 0 -riemann 0 -rho 0.5
