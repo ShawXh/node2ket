@@ -133,13 +133,13 @@ Others:
 
 All the scripts to reproduce experiments of node2ket and node2ket+ in the paper are given as run_*.sh files (maybe annotated).
 
-## Evaluating node2ket
+## Evaluate node2ket
 
 **Network Reconstruction:**
 
 For middle-scale networks, run node2ket with the option "-eval-nr 1".
 
-For large-scale networks /data/youtube-idxnorm-net.txt:
+For large-scale networks /data/youtube-idxnorm-net.txt where the computing the full adjacency matrix is impractical:
 
 ```
 cd evaluation
@@ -159,7 +159,7 @@ python eval_link_pred.py --net /data/ca-GrQc-net.txt-masked -t --tu-emb ./sub_em
 
 Following instructions in this [repo](https://github.com/ShawXh/Evaluate-Embedding) with the full-dimensional node embedding file as input.
 
-## Evaluating Arbitrary Baselines
+## Evaluate Arbitrary Baselines
 
 Supposing we have a full-dimensional embedding file named as emb.txt, whose format is as follows:
 ```
@@ -178,7 +178,7 @@ cd evaluation
 python eval_network_reconstruction.py --emb1 emb.txt --emb2 emb.txt --net /data/ca-GrQc-net.txt --func euc
 ```
 
-On large-scale networks where the computing full adjacency matrix is impractical:
+On large-scale networks where the computing the full adjacency matrix is impractical:
 
 ```
 cd evaluation
