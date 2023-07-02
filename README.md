@@ -97,29 +97,29 @@ Objetive:
 - -num-neg (int) The number of negative samples for the loss skip-gram by negative sampling.
 
 Sampling strategy:
-- -rw (int) If set as 1, then use random walk as the sampling strategy.
+- -rw (0 or 1) If set as 1, then use random walk as the sampling strategy.
 - -window-size (int) The window size of random walk.
-- -rwr (int) If set as 1, then use random walk with restart as the sampling strategy.
+- -rwr (0 or 1) If set as 1, then use random walk with restart as the sampling strategy.
 - -ppralpha (float) The probability of restarting in random walk with restart.
 
 Optimizer:
 - -opt (str) The optimizer. Can be set as sgd, bsgd, rmsprop, or adagrad. Default is adagrad.
 - -batch-size (int) The batch size.
-- -riemann (int) The order in Riemannian optimization.
+- -riemann (int) The order in Riemannian optimization. Can be set as 0, 1, or 2.
 - -rho (float) Learning rate.
 
 Constraints:
-- -zero (int) Set to 1 to adopt zero constraints. Default is 1.
-- -norm (int) Set to 1 to normalize the sub embeddings on the unit hyper sphere. Default is 1.
+- -zero (0 or 1) Set to 1 to adopt zero constraints. Default is 1.
+- -norm (0 or 1) Set to 1 to normalize the sub embeddings on the unit hyper sphere. Default is 1.
 
 Verbose print:
-- -print (int) Set to 1 to print training progress.
+- -print (0 or 1) Set to 1 to print training progress.
 
 Evaluation:
-- -eval-nr (int) Set to 1 to evaluate the network reconstruction precision after embedding learning.
+- -eval-nr (0 or 1) Set to 1 to evaluate the network reconstruction precision after embedding learning.
 
 Output:
-- -outputemb (int) Set to 1 to output embeddings.
+- -outputemb (0 or 1) Set to 1 to output embeddings.
 - -node-emb (str) Path of output full-dimensional node embeddings.
 - -sub-emb (str) Path of output sub-embeddings, from which the full-dimensional embeddings can be recovered.
 
