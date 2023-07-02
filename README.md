@@ -144,7 +144,7 @@ For large-scale networks /data/youtube-idxnorm-net.txt:
 ```
 cd evaluation
 node2ket: ./EvalNR -emb ./sub_embedding.txt -tensorized 1 -net /data/youtube-idxnorm-net.txt
-node2ket+: ./EvalNR -emb ./TU_embedding.txt -tensorized 1 -net /data/youtube-idxnorm-net.txt -config youtube-idxnorm-net.txt.louvain_config
+node2ket+: ./EvalNR -emb ./sub_embedding.txt -tensorized 1 -net /data/youtube-idxnorm-net.txt -config youtube-idxnorm-net.txt.louvain_config
 ```
 
 **Link Prediction:**
