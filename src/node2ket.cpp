@@ -28,7 +28,7 @@ extern std::uniform_real_distribution<double> randf;
 char network_file[MAX_STRING] = "None"; 
 char sequence_file[MAX_STRING] = "None"; 
 char sub_emb_config_file[MAX_STRING] = "None"; 
-char sub_embedding_file_src[MAX_STRING] = "sub_embedding.txt";
+char sub_embedding_file[MAX_STRING] = "sub_embedding.txt";
 char node_embedding_file[MAX_STRING] = "node_embedding.txt";
 char layer_weight_file[MAX_STRING] = "layer_weight.txt";
 char log_file[MAX_STRING] = "tmpfile/log.txt";
@@ -796,7 +796,7 @@ void PrintParameters()
     if (seq_flag = strcmp(sequence_file, "None")) printf("Sequence file: %s \n", sequence_file);
     if (strcmp(sub_emb_config_file, "None")) {printf("sub_emb config file: %s \n", sub_emb_config_file); readtu_flag=true;}
     printf("Node embedding: %s \n", node_embedding_file);
-    printf("TU embedding src: %s \n", sub_embedding_file_src);
+    printf("Sub embedding: %s \n", sub_embedding_file);
     //if (arch == 1) printf("Emb-v:\t%s \n", v_embedding_file);
     printf("-----Training Settings-----------------------------------\n");
     printf("Samples: %lldM\n", total_samples / 1000000);
@@ -877,7 +877,7 @@ void Train()
     // }
 
     if (use_lw) layer_weight.OutputWeight(layer_weight_file);
-    embedding.OutputTensorEmbedding(sub_embedding_file_src, 0., tutab);
+    embedding.OutputTensorEmbedding(sub_embedding_file, 0., tutab);
     OutputEmbedding(node_embedding_file);
 }
 
@@ -932,7 +932,7 @@ int main(int argc, char **argv)
 
     if ((i = ArgPos((char *)"-outputemb", argc, argv)) > 0) outputemb = atoi(argv[i + 1]);
     if ((i = ArgPos((char *)"-node-emb", argc, argv)) > 0) strcpy(node_embedding_file, argv[i + 1]);
-    if ((i = ArgPos((char *)"-TU-emb-src", argc, argv)) > 0) strcpy(sub_embedding_file_src, argv[i + 1]);
+    if ((i = ArgPos((char *)"-sub-emb", argc, argv)) > 0) strcpy(sub_embedding_file, argv[i + 1]);
 
     if ((i = ArgPos((char *)"-opt", argc, argv)) > 0) strcpy(opt_str, argv[i + 1]);
     if ((i = ArgPos((char *)"-obj", argc, argv)) > 0) strcpy(obj_str, argv[i + 1]);
