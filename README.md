@@ -129,7 +129,7 @@ Others:
 - -samples (int) The number of running iterations (in million). Set to 1 means running for 1 million iterations.
 
 
-## Generate Sub-Embedding Indices by Louvain Partition
+## Generate Sub-Embedding Indices by Louvain Partition for Node2ket+
 
 Example:
 ```
