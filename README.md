@@ -136,7 +136,7 @@ Example:
 python InitTUConfigLouvain.py --net ./data/ca-GrQc-net.txt -C 8 --res 100 500 1000 1500
 ```
 
-The argument "-C" is the number of sub-embeddings for each node, "--res" is resolution by Louvain Partition. In the example above, "--res 100 500 1000 1500" means that it conduct Louvain Parition for 4 times with resolutions 100, 500, 1000, and 1500 to generate sub-embedding indices for 4 of the 8 sub-embeddings, and left un-partitioned for the rest 4 of the 8 sub-embeddings. The results of sub-embedding indices are stored in the file "ca-GrQc-net.txt.louvain_config".
+The argument "-C" is the number of sub-embeddings for each node, and "--res" is resolution by Louvain Partition. In the example above, "--res 100 500 1000 1500" means that it conducts Louvain Parition for 4 times with resolutions 100, 500, 1000, and 1500 to generate sub-embedding indices for 4 of the 8 sub-embeddings, and leaves indices un-partitioned for the rest 4 of the 8 sub-embeddings. The results of sub-embedding indices are stored in the file "ca-GrQc-net.txt.louvain_config".
 
 
 # Experiments
