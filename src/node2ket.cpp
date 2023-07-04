@@ -900,7 +900,7 @@ int main(int argc, char **argv)
     printf("==============node2ket==============\n");
     if ((i = ArgPos((char *)"-net", argc, argv)) > 0) strcpy(network_file, argv[i + 1]);
     if ((i = ArgPos((char *)"-seq", argc, argv)) > 0) strcpy(sequence_file, argv[i + 1]);
-    if ((i = ArgPos((char *)"-config", argc, argv)) > 0) strcpy(TU_config_file, argv[i + 1]);
+    if ((i = ArgPos((char *)"-config", argc, argv)) > 0) strcpy(sub_emb_config_file, argv[i + 1]);
     
     if ((i = ArgPos((char *)"-mt-mar", argc, argv)) > 0) margin = atof(argv[i + 1]);
     if ((i = ArgPos((char *)"-temp", argc, argv)) > 0) temp = atof(argv[i + 1]);
