@@ -1,6 +1,6 @@
 # node2ket
 
-This repo contains the code and data for the submission of node2ket to VLDB2024. The files include:
+This repo contains the code and data for the submission of node2ket. The files include:
 
 ```
 ./
