@@ -6,9 +6,9 @@ def parse_args():
     Running for Single-Net embedding.
     '''
     parser = argparse.ArgumentParser()
-    parser.add_argument('--emb1', type=str, default='../baselines/deepwalk/embs/wb-emb.txt', help="/data/emb1.txt")
+    parser.add_argument('--emb1', type=str, default='', help="/data/emb1.txt")
     parser.add_argument('--emb2', type=str, default='', help="/data/emb2.txt")
-    parser.add_argument('--net', type=str, default='/data/xionghao/BTWalk/networks/d2w/wb-net.txt', help="/data/blog-net.txt")
+    parser.add_argument('--net', type=str, default='', help="/data/blog-net.txt")
     parser.add_argument('--func', type=str, default='inner_prod', choices=["euc", "cos", "inner_prod"], help="euc")
     parser.add_argument('--miss-info', default=False, action="store_true")
     return parser.parse_args()
