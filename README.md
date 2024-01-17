@@ -1,6 +1,6 @@
 # node2ket
 
-This repo contains the code and data for the submission of node2ket. The files include:
+This repo contains the code and data for our ICLR 2024 paper [Efficient Network Embedding in the Exponentially Large Quantum Hilbert Space: A High-Dimensional Perspective on Embedding](https://openreview.net/pdf?id=lROh08eK6n). The files include:
 
 ```
 ./
