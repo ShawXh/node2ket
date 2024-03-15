@@ -1,6 +1,23 @@
 # node2ket
 
-This repo contains the code and data for our ICLR 2024 paper [Efficient Network Embedding in the Exponentially Large Quantum Hilbert Space: A High-Dimensional Perspective on Embedding](https://openreview.net/pdf?id=lROh08eK6n). The files include:
+This repo contains the code and data for our ICLR 2024 paper Node2ket: Efficient High-Dimensional Network Embedding in Quantum Hilbert Space [pdf](https://openreview.net/pdf?id=lROh08eK6n). 
+
+## Citation
+
+```
+@inproceedings{
+xiong2024efficient,
+title={Efficient Network Embedding in the Exponentially Large Quantum Hilbert Space: A High-Dimensional Perspective on Embedding},
+author={Hao Xiong and Yehui Tang and Yunlin He and Wei Tan and Junchi Yan},
+booktitle={The Twelfth International Conference on Learning Representations},
+year={2024},
+url={https://openreview.net/forum?id=lROh08eK6n}
+}
+```
+
+## A Brief View of Files
+
+The files include:
 
 ```
 ./
@@ -42,7 +59,7 @@ This repo contains the code and data for our ICLR 2024 paper [Efficient Network 
 └── run-parallel.sh
 ```
 
-## Requirements
+## Requirements of Python Packages
 
 The python scripts work on python 3.8.13 with networkx==2.8.4 and numpy==1.22.4.
 
