@@ -7,7 +7,7 @@ This repo contains the code and data for our ICLR 2024 paper Node2ket: Efficient
 ```
 @inproceedings{
 xiong2024efficient,
-title={Efficient Network Embedding in the Exponentially Large Quantum Hilbert Space: A High-Dimensional Perspective on Embedding},
+title={Node2ket: Efficient High-Dimensional Network Embedding in Quantum Hilbert Space},
 author={Hao Xiong and Yehui Tang and Yunlin He and Wei Tan and Junchi Yan},
 booktitle={The Twelfth International Conference on Learning Representations},
 year={2024},
